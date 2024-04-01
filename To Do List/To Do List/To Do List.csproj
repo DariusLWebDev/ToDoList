@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A863CC9B-C257-455A-A6CA-45AA47694B03}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>To_Do_List</RootNamespace>
+    <AssemblyName>To Do List</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.7.100.14\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SecurityToken, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.SecurityToken.3.7.100.14\lib\net45\AWSSDK.SecurityToken.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.6.1\lib\net471\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.24.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.24.0\lib\net472\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.24.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.24.0\lib\net472\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.24.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.24.0\lib\net472\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.8.2\lib\netstandard2.0\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.30.1\lib\net461\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappier, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a1b25124e6e13a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappier.1.0.0\lib\netstandard2.0\Snappier.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdSharp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.7.3\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="libmongocrypt.dylib" />
+    <None Include="libmongocrypt.so" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\MongoDB.Driver.AggregateBucketAutoGranularity.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.AggregateBucketAutoOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.AggregateBucketAutoResultIdSerializer.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.AggregateCountResult.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.AggregateFacet.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.AggregateFacetResult.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.AggregateFacetResults.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.AggregateOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ArrayFilterDefinition.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.BulkWriteError.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.BulkWriteOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.BulkWriteResult.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.BulkWriteUpsert.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ChangeStreamOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ChangeStreamPreAndPostImagesOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ChangeStreamStageOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ClientSessionOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ClusterRegistry.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.CountOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.CreateCollectionOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.CreateIndexOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.CreateManyIndexesOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.CreateOneIndexOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.CreateSearchIndexModel.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DeleteOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DeleteResult+Acknowledged.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DeleteResult+Unacknowledged.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DeleteResult.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DensifyBounds.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DensifyDateTimeBounds.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DensifyDateTimeRange.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DensifyKeywordDateTimeBounds.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DensifyLowerUpperDateTimeBounds.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DensifyRange.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DistinctOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DocumentsWindow.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DocumentsWindowBoundary.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DropCollectionOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.DropIndexOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Encryption.AutoEncryptionOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Encryption.ClientEncryption.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Encryption.ClientEncryptionOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Encryption.CreateEncryptedCollectionResult.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Encryption.DataKeyOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Encryption.EncryptOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Encryption.MongoEncryptionCreateCollectionException.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Encryption.MongoEncryptionException.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Encryption.RangeOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Encryption.RewrapManyDataKeyOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Encryption.RewrapManyDataKeyResult.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.EstimatedDocumentCountOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ExpressionTranslationOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ExternalEvidence.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.FindOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.FindOptionsBase.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson2DCoordinates.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson2DGeographicCoordinates.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson2DProjectedCoordinates.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson3DCoordinates.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson3DGeographicCoordinates.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson3DProjectedCoordinates.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJsonCoordinateReferenceSystem.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJsonCoordinates.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJsonLinkedCoordinateReferenceSystem.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJsonNamedCoordinateReferenceSystem.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJson2DCoordinatesSerializer.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJson2DGeographicCoordinatesSerializer.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJson2DProjectedCoordinatesSerializer.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJson3DCoordinatesSerializer.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJson3DGeographicCoordinatesSerializer.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJson3DProjectedCoordinatesSerializer.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJsonCoordinateReferenceSystemSerializer.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJsonCoordinatesSerializer.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJsonLinkedCoordinateReferenceSystemSerializer.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJsonNamedCoordinateReferenceSystemSerializer.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IAggregateFluentExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IClientSession.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IClientSessionHandle.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IFindFluentExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IMongoClient.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IMongoClientExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IMongoCollectionExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IMongoDatabase.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IMongoDatabaseExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IndexKeysDefinitionExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IndexOptionDefaults.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.InsertManyOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.InsertOneOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IPipelineStageDefinition.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IRenderedPipelineStageDefinition.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.IServerSession.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.KeywordDocumentsWindowBoundary.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.KeywordRangeWindowBoundary.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.DateTimeExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.DateTimeUnit.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.ExponentialMovingAverageAlphaWeighting.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.ExponentialMovingAveragePositionalWeighting.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.ExponentialMovingAverageWeighting.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.ExpressionNotSupportedException.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.IMongoQueryable.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.ISetWindowFieldsPartitionExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.LinqExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.MongoDBMath.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.MongoEnumerable.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.MongoQueryable.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.NullableDateTimeExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.QueryableExecutionModel.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Linq.StringExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ListCollectionNamesOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ListCollectionsOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ListDatabaseNamesOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ListDatabasesOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ListIndexesOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ListSetFieldDefinitionsExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MapReduceOutputOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoBulkWriteException.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoClient.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoClientBase.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoClientSettings.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoCollectionSettings.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoCredential.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoDatabaseBase.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoDatabaseSettings.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoDBRef.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoDBRefSerializer.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoDefaults.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoExternalAwsIdentity.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoExternalIdentity.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoIdentity.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoIdentityEvidence.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoInternalIdentity.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoServerAddress.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoUrl.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoUrlBuilder.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoUrlTypeConverter.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoUtils.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoWriteException.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.MongoX509Identity.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Mql.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.NoPipelineInput.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.PasswordEvidence.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.PipelineDefinitionBuilder.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.PipelineStageDefinitionBuilder.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.PositionDocumentsWindowBoundary.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ProjectionDefinitionExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.QueryVector.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.RangeWindow.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.RangeWindowBoundary.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.RenameCollectionOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.RenderedFieldDefinition.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ReplaceOneResult+Acknowledged.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ReplaceOneResult+Unacknowledged.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ReplaceOneResult.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ReplaceOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.IMongoSearchIndexManager.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.MultiSearchQueryDefinition.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.SearchCountOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.SearchFuzzyOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.SearchHighlight.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.SearchHighlightText.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.SearchMetaCountResult.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.SearchMetaFacetBucketResult.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.SearchMetaFacetResult.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.SearchMetaResult.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.SearchQueryDefinition.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.SearchRangeBuilder.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.SearchScoreDetails.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.SearchTrackingOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.Search.SingleSearchQueryDefinition.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.SetWindowFieldsWindow.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.SortDefinitionExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.SslSettings.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.StringOrRegularExpression.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.TextSearchOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.TimeRangeWindowBoundary.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.UpdateDefinitionExtensions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.UpdateOptions.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.UpdateResult+Acknowledged.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.UpdateResult+Unacknowledged.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.UpdateResult.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.ValueRangeWindowBoundary.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.WriteConcernError.datasource" />
+    <None Include="Properties\DataSources\MongoDB.Driver.WriteError.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.SecurityToken.3.7.100.14\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mongocrypt.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MongoDB.Libmongocrypt.1.8.2\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.8.2\build\MongoDB.Libmongocrypt.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.8.2\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.8.2\build\MongoDB.Libmongocrypt.targets'))" />
+  </Target>
+</Project>

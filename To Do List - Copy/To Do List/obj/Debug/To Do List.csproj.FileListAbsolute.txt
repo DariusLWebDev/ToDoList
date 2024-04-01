@@ -1,0 +1,53 @@
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\To Do List.exe.config
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\To Do List.exe
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\To Do List.pdb
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\obj\Debug\To Do List.csproj.AssemblyReference.cache
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\obj\Debug\To_Do_List.toDoList.resources
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\obj\Debug\To_Do_List.Properties.Resources.resources
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\obj\Debug\To Do List.csproj.GenerateResource.cache
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\obj\Debug\To Do List.csproj.CoreCompileInputs.cache
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\obj\Debug\To Do List.exe
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\obj\Debug\To Do List.pdb
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\mongocrypt.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\AWSSDK.Core.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\AWSSDK.SecurityToken.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\DnsClient.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\Microsoft.Win32.Registry.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\MongoDB.Bson.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\MongoDB.Driver.Core.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\MongoDB.Driver.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\SharpCompress.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\Snappier.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Buffers.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Memory.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Numerics.Vectors.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Security.AccessControl.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Security.Principal.Windows.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\ZstdSharp.dll
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\AWSSDK.Core.pdb
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\AWSSDK.Core.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\AWSSDK.SecurityToken.pdb
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\AWSSDK.SecurityToken.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\DnsClient.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\Microsoft.Win32.Registry.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\MongoDB.Bson.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\MongoDB.Driver.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\MongoDB.Driver.Core.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\Snappier.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Buffers.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Memory.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Numerics.Vectors.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Security.AccessControl.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Security.Principal.Windows.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\DariusWebDevRepo\ToDoList\To Do List\To Do List\obj\Debug\To Do List.csproj.CopyComplete
