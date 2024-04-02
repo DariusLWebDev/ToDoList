@@ -35,9 +35,21 @@ namespace To_Do_List
             todoList.Columns.Add("Title");
             todoList.Columns.Add("Description");
 
+            // Load data from MongoDB
+            LoadDataFromMongoDB();
+
             //Point our datagridview to our datasource
             toDoListView.DataSource = todoList;
 
+        }
+
+        private void LoadDataFromMongoDB()
+        {
+            var entries = coll.Find(new BsonDocument()).ToList();
+            foreach (var entry in entries)
+            {
+                todoList.Rows.Add(entry.titleTextBox, entry.descriptionTextBox);
+            }
         }
 
         private void newButton_Click(object sender, EventArgs e)
